@@ -1,0 +1,16 @@
+X...........X.....X
+...................
+..XXXXX............
+..XXXXX............
+..XXXXX............
+..XXXXX.XXXXXXXXXX.
+..XXXXX.XXXXXXXXX..
+..XXXXX.XXXXXXXXX..
+........XXX...XXX..
+X.......XXX...XXX..
+.....X..XXX...XXX..
+.....X..XXXXXXXXX..
+.....X..XXXXXXXXX..
+..XXXX..XXXXXXXXXXX
+...................
+X........X........X

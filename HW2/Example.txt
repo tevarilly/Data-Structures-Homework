@@ -1,0 +1,43 @@
+Firstname Lastname #matcheswon #matcheslost %matcheswon #gameswon #gameslost %gameswon
+
+Player has played (matcheswon + matcheslost) number of matches total
+
+Player has played (gameswon + gameslost) number of games total
+
+Marcos Baghdatis d. Radek Stepanek  6-4 6-3 3-6 0-6 7-5 
+David Nalbandian d. Danai Udomchoke  6-2 6-2 1-6 6-7 6-1 
+Marcos Baghdatis d. Ivan Ljubicic  6-4 6-2 4-6 3-6 6-3 
+Marcos Baghdatis d. David Nalbandian  3-6 5-7 6-3 6-4 6-4 
+
+x		y
+3       73
+1       49
+0       18
+0       21
+0       24
+
+
+Turn the matches won (player_database[2]) and the games won (player_database[5]) into doubles (stod)
+Put these integers into vectors of doubles x and y respectively
+Pass the vectors of doubles through linear regression function
+
+std::vector<double> GetLinearFit(const std::vector<double>& xData, const std::vector<double>& yData)
+{
+    double xSum = 0, ySum = 0, xxSum = 0, xySum = 0, slope, intercept;
+
+    for (long i = 0; i < yData.size(); i++)
+    {
+        xSum += xData[i];
+        ySum += yData[i];
+        xxSum += xData[i] * xData[i];
+        xySum += xData[i] * yData[i];
+    }
+    slope = (yData.size() * xySum - xSum * ySum) / (yData.size() * xxSum - xSum * xSum);
+    intercept = (ySum - slope * xSum) / yData.size();
+    std::vector<double> xy_equation;
+    xy_equation.push_back(slope);
+    xy_equation.push_back(intercept);
+    return xy_equation;
+}
+
+If user inputs how many games a player won, output the likely number of matches they won or vice versa
